@@ -1,0 +1,8 @@
+let age = prompt("How old are you? ", "18");
+
+if (age > 18) {
+    console.log("You are the right age for using this application");
+}
+else {
+    console.log("please come after some years");
+}
