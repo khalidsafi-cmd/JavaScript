@@ -1,10 +1,5 @@
-booWho(false);
+let arr = ["banana", "apple"];
 
-function booWho(obj) {
-  if (typeof obj === "boolean"){
-    return console.log(true);
-  }
-  else {
-    return console.log(false);
-  }
-}
+const newLength = fruits.push("Orange");
+
+console.log(newLength);
