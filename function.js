@@ -19,4 +19,6 @@ const greetings = (name) => {
 
 
 
-const greetings = name => console.log("Hello, " + name + "!");
+const greet = name => console.log("Hello, " + name + "!");
+
+greet("Khalid");
