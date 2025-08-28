@@ -1,3 +1,2 @@
-let bro = "Hello World";
-
-console.log(bro);
+const numbers = [1, 2, 3];
+console.log(numbers[10]);
