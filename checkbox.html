@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>What is your Favorite color?</h1>
+    <form>
+        <table>
+            <tr>
+                <td>Red: <input type="checkbox" id="red" name="red"></td>
+                <td>Black <input type="checkbox" id="black" name="black"></td>
+                <td>Blue <input type="checkbox" name="blue" id="blue"></td>
+                <td>Green <input type="checkbox" name="Green" id="green"></td>
+            </tr>
+        </table>
+        <button type="button" onclick="validateCheckBox()"> Submit</button>
+    </form>
+
+    <script>
+        const red = document.getElementById("red");
+        const black = document.getElementById("black");
+        const blue = document.getElementById("blue");
+        const green = document.getElementById("green");
+
+        function validateCheckBox(){
+        let flag = false;
+            if (red.checked){
+                flag = true;
+            }
+            if (black.checked){
+                flag = true
+            }
+            if (blue.checked){
+                flag = true;
+            }
+            if (green.checked){
+                flag = true;
+            }
+
+            if (flag == true){
+                alert("You have chosen your favorite color");
+            }
+            else {
+                alert("please choose your color");
+            }
+        }
+    </script>
+</body>
+</html>
