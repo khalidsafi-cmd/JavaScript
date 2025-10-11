@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="signupForm">
+        <div>
+            UserName: <input type="text" id="username" placeholder="Username">
+        </div>
+        <div>
+            Email: <input type="email" id="email" placeholder="Email">
+        </div>
+        <div>
+            <fieldset>
+                <legend>What major do you want to study in University?</legend>
+                <label>Law <input type="checkbox" id="Law"></label>
+                <label>CS <input type="checkbox" id="CS"></label>
+                <label>BBA <input type="checkbox" id="BBA"></label>
+            </fieldset>
+        </div>
+        <div>
+            Password: <input type="password" id="password" placeholder="Enter your password">
+        </div>
+        <div>
+            Confirm Password: <input type="password" id="confirmPassword" placeholder="confirmPassword">
+        </div>
+    <button type="submit" onclick="validate(event)">Sign Up</button>
+</form>
+
+    <p id="error" style="color: red"></p>
+
+    <script>
+        const form = document.getElementById("signupForm");
+        const username = document.getElementById("username");
+        const error = document.getElementById("error");
+        const email = document.getElementById("email");
+        const password = document.getElementById("password");
+        const confirmPassword = document.getElementById("confirmPassword");
+
+
+        function validate(event) {
+        event.preventDefault();
+
+        if (username.value.trim() === ""){
+            error.textContent = "Username is Required1";
+        }  else if (!email.value.includes("@")) {
+            error.textContent = "Please enter a valid email Address";
+        }  else if (password.value.length < 8){
+            error.textContent = "Please enter a password that is at least 8 characters"
+        }  else if (password.value !== confirmPassword.value){
+            error.textContent = "Passwords do not match";
+        } else {
+            error.textContent = ""; 
+            document.write("Everything is working fine");
+        }
+        };
+    </script>
+
+</body>
+</html>
