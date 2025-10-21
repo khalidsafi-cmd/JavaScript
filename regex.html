@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .error {
+            color: red;
+        }
+
+        .success {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <table>
+            <tr>    
+                <td>
+                    <label for="name">Name: <input type="text" name="name" id="name"></label>
+                    <p id="errorMessage"></p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="Phone">Phone: <input type="text" id="phone" name="phone"></label>
+                    <p id="errorPhone"></p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button type="submit" onclick="validate(event)">Submit</button>
+                </td>
+            </tr>
+            </table>
+    </form>
+
+    <script>
+        const name = document.getElementById("name");
+        const errorMessage = document.getElementById("errorMessage");
+
+        const phone = document.getElementById("phone");
+        const errorPhone = document.getElementById("errorPhone");
+
+        function validate(event){
+            event.preventDefault();
+            const nameValidate = /^[A-Za-z\s'-]+$/;
+            const phoneValidate = /^[0-9]{3}-[0-9]{3}-[0-9]{4}$/;
+
+            if(!nameValidate.test(name.value)){
+                errorMessage.textContent = "Please enter a correct name!";
+                errorMessage.className = "error"
+            }
+            else{
+                errorMessage.textContent = "You have entered a correct name";
+                errorMessage.className = "success";
+            }
+
+            if(!phoneValidate.test(phone.value)){
+                errorPhone.textContent = "Please enter a correct phone number";
+                errorPhone.className = "error";
+            }
+            else {
+                errorPhone.textContent = "You have entered a correct phone number";
+                errorPhone.className = "success";
+            }
+        }
+    </script>
+</body>
+</html>
