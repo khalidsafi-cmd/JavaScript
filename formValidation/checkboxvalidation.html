@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+            <div>
+            <fieldset>
+                <legend>What major do you want to study in University?</legend>
+                <label>Law <input type="checkbox" id="Law"></label>
+                <label>CS <input type="checkbox" id="CS"></label>
+                <label>BBA <input type="checkbox" id="BBA"></label>
+            </fieldset>
+            <button type="submit" onclick="validate()">Submit</button>
+        </div>
+
+        <script>
+        const law = document.getElementById("Law");
+        const CS = document.getElementById("CS");
+        const BBA = document.getElementById("BBA");
+
+        function validate(){
+        let flag = false;
+
+        if (Law.checked){
+            flag = true;
+        };
+        if (CS.checked){
+            flag = true;
+        }
+        if (BBA.checked){
+            flag = true;
+        }
+
+        if (flag){
+            alert("validated!!!!!!!!!");
+        }
+        else {
+            alert("please select a major");
+        }
+
+
+        };
+        </script>
+</body>
+</html>

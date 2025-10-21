@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Gender:</p>
+    <label><input type="radio" name="gender" value="male"> Male</label>
+    <label><input type="radio" name="gender" value="female"> Female</label>
+    <button type="submit" value="submit" onclick="validate()">Submit</button>
+
+    <script>
+        function validate() {
+            const genderRadios = document.getElementsByName("gender");
+            let genderSelected = false;
+
+            for (let i = 0; i < genderRadios.length; i++) {
+                if (genderRadios[i].checked) {
+                    genderSelected = true;
+                    break;
+                }
+            }
+
+            if (!genderSelected) {
+                alert("Please select a gender");
+                return;
+            }
+
+            alert("Wow, you selected a gender. Wow.");
+        }
+    </script>
+</body>
+</html>
