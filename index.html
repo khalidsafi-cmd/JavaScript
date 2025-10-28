@@ -1,15 +1,57 @@
-<script>
-    let bro = "Hello World";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <table>
+            <tr><td><label for="number-1">Number 1: <input type="number" id="num1"></label></td></tr>
 
-console.log(bro);
-</script>
-<script>
-let age = prompt("How old are you? ", "18");
+            <tr><td><label for="number-2">Number 2: <input type="number" id="num2"></label></td></tr>
+            <tr>
+                <td><button id="add" onclick="add()">Add</button></td>
+                <td><button id="multiply" onclick="multiply()">Multiply</button></td>
+                <td><button id="divide" onclick="divide()">Divide</button></td>
+            </tr>
+        </table>
+        <p>The result is: <span id="result"></span></p>
 
-if (age > 18) {
-    console.log("You are the right age for using this application");
-}
-else {
-    console.log("please come after some years");
-}
-</script>
+        <script>
+        function add(){
+            const num1Input = document.getElementById("num1");
+            const num2Input = document.getElementById("num2");
+            const result = document.getElementById("result");
+            
+            const value1 = parseFloat(num1Input.value) || 0;
+            const value2 = parseFloat(num2Input.value) || 0;
+            result.textContent = value1 + value2;
+        }
+        
+        function multiply(){
+            const num1Input = document.getElementById("num1");
+            const num2Input = document.getElementById("num2");
+            const result = document.getElementById("result");
+            
+            const value1 = parseFloat(num1Input.value) || 0;
+            const value2 = parseFloat(num2Input.value) || 0;
+            result.textContent = value1 * value2;
+        }
+        
+        function divide(){
+            const num1Input = document.getElementById("num1");
+            const num2Input = document.getElementById("num2");
+            const result = document.getElementById("result");
+            
+            const value1 = parseFloat(num1Input.value) || 0;
+            const value2 = parseFloat(num2Input.value) || 0;
+            if(value2 === 0) {
+                result.textContent = "Cannot divide by zero";
+            } else {
+                result.textContent = value1 / value2;
+            }
+        }
+        </script>        
+</body>
+</html>
